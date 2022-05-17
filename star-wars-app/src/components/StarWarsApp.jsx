@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import characters from "../images/characters-small.jpg";
+import charactersImg from "../images/characters-small.jpg";
+import luke from "../images/luke-skywalker.jpg";
 
 function StarWarApp() {
-    const [character, setCharacter] = useState([]);
+    const [characters, setCharacters] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
-        fetch(`https://swapi.dev/api/people/1/`)
+        // fetch(`https://randomuser.me/api/?results=1`)
+        fetch(`https://swapi.dev/api/people/`)
             .then(response => response.json())
 
             .then(data => {
-                setCharacter(data.results);
+                setCharacters(data.results[0]);
                 setIsLoading(false);
             })
             .catch(() => {
@@ -37,12 +39,15 @@ function StarWarApp() {
             <h1>Star Wars Characters</h1>
            
 
-            <img className = "small" src={characters} alt="The Star Wars characters"/>
-            <h2>Click on the Learn More button to learn more about your favorite character</h2>
-            <div className = "row character-list ">
-                <p>Name:   </p>
+            <img className = "small" src={charactersImg} alt="The Star Wars characters"/>
+            <h2>Click on the button to learn more about your favorite character</h2>
+            <section className="row row-center">
+            <div className="character-list">
+                <img className="character-img" src={luke} alt="Luke holding a light sabre"/>
+                <p>{characters.name}</p>
                 <button>Learn More</button>
             </div>
+             </section>
         </main>
     );
     // end of return

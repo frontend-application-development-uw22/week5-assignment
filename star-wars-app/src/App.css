@@ -4,16 +4,25 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   box-sizing: border-box;
   font-size: 100%;
+  background-color: black;
+  color:white;
+  text-align: center;
 }
 
 h1, h2 {
   text-align: center;
-  margin-bottom: .5rem;
+  margin: 1rem;
+  color: goldenrod;
 }
 
 h1 {
   font-size: 3rem;
 }
+
+section {
+
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -22,19 +31,33 @@ h1 {
 }
 
 .row-center {
-  justify-content: center;
+  justify-content: space-between;
+ 
   
 }
 
 .character-list {
-  margin: 3rem 10rem;
-  justify-content: center;
-  
+  text-align: center;
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 0.5rem;
+  border:1rem goldenrod;
 }
+
 
 .character-list p {
   margin-right: 3rem;
   font-size: 1.5rem;
+  text-align: center;
+ 
+}
+
+.character-img {
+  max-height: 15rem;
+
 }
 
 button {
@@ -42,15 +65,15 @@ button {
   padding: 0.2rem;
   margin: 0.2rem;
   border-radius: 0.5rem;
-  border: 0.1rem darkblue solid;
-  background-color: darkblue;
-  width: 5rem;
+  border: 0.1rem goldenrod;
+  background-color:  goldenrod;
+  width: 50%;
   cursor: pointer;
-  color: white;
+  color: black;
 }
 
 img.small {
-  max-height: 30rem;
+  max-height: 30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
