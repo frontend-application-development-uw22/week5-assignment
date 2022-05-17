@@ -19,9 +19,6 @@ h1 {
   font-size: 3rem;
 }
 
-section {
-
-}
 
 .row {
   display: flex;
@@ -42,28 +39,29 @@ section {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 20%;
   border-radius: 0.5rem;
-  border:1rem goldenrod;
+  border:.1rem solid goldenrod;
 }
 
 
 .character-list p {
-  margin-right: 3rem;
   font-size: 1.5rem;
   text-align: center;
+  margin-top: .5rem;
  
 }
 
 .character-img {
-  max-height: 15rem;
+  max-height: 10rem;
+  margin-top: 1rem;
 
 }
 
 button {
   font-size: 0.8rem;
   padding: 0.2rem;
-  margin: 0.2rem;
+  margin: .75rem;
   border-radius: 0.5rem;
   border: 0.1rem goldenrod;
   background-color:  goldenrod;
@@ -77,5 +75,6 @@ img.small {
   display: block;
   margin-left: auto;
   margin-right: auto;
+
   width: 50%;
 }
