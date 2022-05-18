@@ -4,9 +4,9 @@ import React, { useEffect } from 'react'
 function Home({ character }) {
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/${character}`)
-      // .then(reply => reply.json())
-      // .then(data => console.log(data))
+    fetch(`https://swapi.dev/api/people/?search=${character}`)
+      .then(reply => reply.json())
+      .then(data => console.log(data))
   })
 
   return (

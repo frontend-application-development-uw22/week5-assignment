@@ -4,7 +4,7 @@ import Home from './Home';
 function App() {
   return (
     <div className="">
-      <Home character='1' />
+      <Home character='Luke' />
     </div>
   );
 }
