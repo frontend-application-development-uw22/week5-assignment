@@ -12,7 +12,7 @@ function App() {
     // Returns an access token from petfinder.com.
     const getAccessToken = async () => {
       const gotAccessToken = await fetch("https://api.petfinder.com/v2/oauth2/token", {
-        body: "grant_type=client_credentials&client_id=pnIwAePqMP6iENJBYvs24T7RHVS3qeyiNX1q0Q056DN7WvVC80&client_secret=ciQLt1H1fIJPmqpDucZ5odp0upsB1MfXGDA4SyZZ",
+        body: `grant_type=client_credentials&client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },

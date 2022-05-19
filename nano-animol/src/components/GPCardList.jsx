@@ -10,6 +10,7 @@ function GPCardList({gpData}) {
     const gpCardId = "gpcard-" + iKey;
     return <GPCard 
       key={gpCardId}
+      id={gpCardId}
       name={gp.name}
       age={gp.age}
       gender={gp.gender}
