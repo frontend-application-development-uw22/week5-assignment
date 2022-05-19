@@ -19,12 +19,18 @@ function PokemonHome() {
                 console.log(data.id)
             });
     }, []);
-    return (
-      <div>
-        <h1>{pokemon.name}</h1>
-        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${pokemon.id}.png`}></img>
-      </div>
-    );
+
+    if (isLoading) {
+      return <p>Loading...</p>;
   }
+
+  return (
+      <div>
+          <h1>{pokemon.name}</h1>
+          <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${pokemon.id}.png`}></img>
+ 
+      </div>
+  );
+};
   
   export default PokemonHome;
