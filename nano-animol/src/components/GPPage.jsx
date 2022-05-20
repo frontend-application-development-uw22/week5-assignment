@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {useLocation, useParams} from 'react-router-dom';
 import {getAccessToken, getGPData} from '../get-data.js';
+import Loading from './Loading.jsx';
 
 function GPPage() {
 
   const {gpId} = useParams();
   const [gpData, setGPData] = useState({});
   const [gpPhotos, setGPPhotos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const refreshData = async () => {
@@ -15,15 +16,15 @@ function GPPage() {
       const gotGPData = await getGPData(gotAccessToken, gpId);
       setGPData(gotGPData.animal);
       setGPPhotos(gotGPData.animal.photos);
-      setIsLoading(false);
+      setLoading(false);
       console.log(gpData);
     }
     refreshData();
   }, [gpData]);
 
-  if (isLoading) {
+  if (loading) {
     return (
-      <p>Loading...</p>
+      <Loading />
     )
   }
 

@@ -6,23 +6,30 @@ import './App.css';
 import {getAccessToken, getGPListData} from './get-data.js';
 import GPCardList from './components/GPCardList';
 import GPPage from './components/GPPage';
+import Loading from './components/Loading';
 
 function App() {
   
   const [accessToken, setAccessToken] = useState([]);
   const [gpData, setGPData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // refreshData /////////////////////////////////////////////////////////////
-    // Gets & sets the [accessToken] & [gpData].
     const refreshData = async () => {
       const gotAccessToken = await getAccessToken();
       setAccessToken(gotAccessToken);
       const gotGPData = await getGPListData(gotAccessToken);
       setGPData(gotGPData);
+      setLoading(false);
     }
     refreshData();
   }, []);
+
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
 
   return (
     <div className="App">
