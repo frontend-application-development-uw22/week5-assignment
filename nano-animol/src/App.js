@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import ReactDOM from "react-dom/client";
+import {Link, Outlet, Route, Routes, useLocation, useNavigate, useParams}
+  from "react-router-dom";
 import './App.css';
+import {getAccessToken, getGPListData} from './get-data.js';
 import GPCardList from './components/GPCardList';
+import GPPage from './components/GPPage';
 
 function App() {
   
@@ -8,62 +13,12 @@ function App() {
   const [gpData, setGPData] = useState([]);
 
   useEffect(() => {
-    // getAccessToken //////////////////////////////////////////////////////////
-    // Returns an access token from petfinder.com.
-    const getAccessToken = async () => {
-      const gotAccessToken = await fetch("https://api.petfinder.com/v2/oauth2/token", {
-        body: `grant_type=client_credentials&client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}`,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        method: "POST"
-      })
-      .catch(() => {
-        console.log(
-          `Failed [access_token] request to petfinder.com.
-          Do you have the [client_id] and [client_secret]?`
-        );
-      })
-      // Convert response to JSON,
-      .then((fetchedResponse) => {
-        return fetchedResponse.json();
-      })
-      // Extract & return [access_token] from response.
-      .then((jsonifiedResponse) => {
-        return jsonifiedResponse.access_token;
-      })
-      .catch(() => {
-        console.log("Cannot retrieve [access_token] from petfinder.com.");
-      })
-      return gotAccessToken;
-    }
-    // getGPData ///////////////////////////////////////////////////////////////
-    // Returns guinea pig data given a petfinder.com access token.
-    const getGuineaPigData = async (gotAccessToken) => {
-      const gotGPData = fetch("https://api.petfinder.com/v2/animals/?type=small-furry&location=98405&sort=distance", {
-        headers: {
-          Authorization: `Bearer ${gotAccessToken}`
-        }
-      })
-      .catch(() => {
-        console.log("Cannot fetch guinea pig data.");
-      })
-      // Convert response to JSON,
-      .then((fetchedResponse) => {
-        return fetchedResponse.json();
-      })
-      // Extract & return [animals] array from response.
-      .then((jsonifiedResponse) => {
-        return jsonifiedResponse.animals;
-      })
-      return gotGPData;
-    }
     // refreshData /////////////////////////////////////////////////////////////
-    // Gets & sets the [accessToken] and [gpData].
+    // Gets & sets the [accessToken] & [gpData].
     const refreshData = async () => {
-      let gotAccessToken = await getAccessToken();
+      const gotAccessToken = await getAccessToken();
       setAccessToken(gotAccessToken);
-      let gotGPData = await getGuineaPigData(gotAccessToken);
+      const gotGPData = await getGPListData(gotAccessToken);
       setGPData(gotGPData);
     }
     refreshData();
@@ -71,9 +26,24 @@ function App() {
 
   return (
     <div className="App">
-      <GPCardList 
-        gpData={gpData}
-      />
+      <Routes>
+        <Route 
+          path="/" 
+          element={<GPCardList gpData={gpData} accessToken={accessToken}/>}
+        />
+        <Route 
+          path="guinea-pigs/:gpId"
+          element={<GPPage />} 
+        />
+        <Route
+          path="*"
+          element={
+            <main>
+              <p>404</p>
+            </main>
+          }
+        />
+      </Routes>
     </div>
   );
 }
