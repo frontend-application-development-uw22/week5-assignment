@@ -4,7 +4,6 @@ import "./App.css";
 import Login from "./Components/Login/Login";
 import Profile from "./Components/Profile/Profile";
 import Playlists from "./Components/Playlists/Playlists";
-import Albums from "./Components/Albums/Albums";
 import FollowedArtists from "./Components/FollowedArtists/FollowedArtists";
 
 function useQuery() {
