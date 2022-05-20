@@ -1,0 +1,27 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__heading {
+  font-size: 40px;
+}
+
+.login__link {
+  padding: 20px 30px;
+  border-radius: 30px;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  top: -100px;
+  transition: transform 0.3s ease;
+}
+
+.login__link:hover {
+  transform: scale(1.1);
+}

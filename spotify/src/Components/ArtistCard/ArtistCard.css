@@ -1,0 +1,15 @@
+.artist-card {
+  max-width: 100px;
+}
+
+.artist-card__image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform ease 0.3s;
+}
+
+.artist-card__image:hover {
+  transform: scale(1.1);
+}

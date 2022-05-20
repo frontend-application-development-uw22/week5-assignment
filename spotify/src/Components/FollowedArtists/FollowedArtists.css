@@ -1,0 +1,11 @@
+.followed-artists {
+  margin-top: 60px;
+}
+
+.followed-artist__card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: self-start;
+}
