@@ -1,0 +1,10 @@
+.artist {
+  display: flex;
+  gap: 10px;
+}
+
+.artist__image {
+  height: 400px;
+  width: 500px;
+  object-fit: cover;
+}

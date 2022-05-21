@@ -1,0 +1,16 @@
+.playlists {
+  display: flex;
+  gap: 20px;
+}
+
+.playlists__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlists__image {
+  height: 240px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}

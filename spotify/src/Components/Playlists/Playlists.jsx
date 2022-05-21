@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Playlists.css";
 
 export default function Playlists({ accessToken }) {
   const [playlists, setPlaylists] = useState();
@@ -20,18 +21,26 @@ export default function Playlists({ accessToken }) {
 
   return (
     <div>
-      <h3 className="playlists">Playlists</h3>
-      {dataLoaded &&
-        playlists.items.map((playlist) => {
-          return (
-            <>
-              <p className="playlists">{playlist.name}</p>
-              <div>
-                <img src={playlist.images[0].url} alt="" />
+      <h2 className="playlists__heading">Playlists</h2>
+      <div className="playlists">
+        {dataLoaded &&
+          playlists.items.map((playlist) => {
+            return (
+              <div className="playlists__details">
+                <div>
+                  <img
+                    className="playlists__image"
+                    src={playlist.images[0].url}
+                    alt=""
+                  />
+                </div>
+                <p className="" playlists__name>
+                  {playlist.name}
+                </p>
               </div>
-            </>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 }

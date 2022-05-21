@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Login from "./Components/Login/Login";
-import ArtistCard from "./Components/ArtistCard/ArtistCard";
+import Artist from "./Components/Artist/Artist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,7 +19,7 @@ root.render(
       <h1 className="global-header__heading">API Demo Project</h1>
       <a
         className="global-header__logout"
-        href="https://www.spotify.com/logout/"
+        href="https://accounts.spotify.com/en/logout"
       >
         Logout
       </a>
@@ -28,7 +28,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/artist/:id" element={<ArtistCard />} />
+        <Route path="/artist/:id" element={<Artist />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
