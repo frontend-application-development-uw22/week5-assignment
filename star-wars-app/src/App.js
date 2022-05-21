@@ -4,6 +4,8 @@ import StarWarApp from './components/StarWarsApp';
 import CharDetails from './components/CharDetails';
 import { Route, Routes  } from 'react-router-dom';
 
+
+
 const Home = () => {
   return (
     <div>
