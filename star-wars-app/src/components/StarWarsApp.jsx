@@ -38,9 +38,9 @@ function StarWarsApp() {
 
     return (
         <main >
-            <h1>Star Wars Characters</h1>
+
             <img className="small" src={charactersImg} alt="The Star Wars characters" />
-            <h2>Click on the button to learn more about your favorite character</h2>
+            <h3>Click on the button to learn more about your favorite character</h3>
             <section key="index" className="row">
                 {characters.map((character, index) =>
                     <Characters
