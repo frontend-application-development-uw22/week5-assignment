@@ -1,6 +1,6 @@
 import React from "react";
 // import luke from "../images/luke-skywalker.jpg";
-
+import { Link  } from 'react-router-dom';
 
 function Characters({character}) {
 
@@ -10,7 +10,7 @@ function Characters({character}) {
             <div className="character-list">
                 {/* <img className="character-img" src={luke} alt="Luke holding a light sabre" /> */}
                 <p>{character.name}</p>
-                <button>Learn More</button>
+                <button><Link to="/character/charName">Learn More</Link></button>
             </div>
 
     )

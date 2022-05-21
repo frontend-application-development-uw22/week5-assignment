@@ -96,3 +96,8 @@ img.small {
 
   width: 50%;
 }
+
+button a {
+  background-color: goldenrod;
+  text-decoration: none;
+}

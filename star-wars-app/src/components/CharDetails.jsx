@@ -1,11 +1,13 @@
 import React from 'react';
 import luke from "../images/luke-skywalker.jpg"
+import { Link  } from 'react-router-dom';
 
 
 
 function CharDetails() {
     return (
         <div>
+            <p><Link to="/">Return to Home</Link></p>
             <img className ="character-img" src={luke} alt="Luke Skywalker" />
             <h2>Luke Skywalker</h2>
 

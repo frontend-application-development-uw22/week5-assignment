@@ -2,7 +2,7 @@
 import './App.css';
 import StarWarApp from './components/StarWarsApp';
 import CharDetails from './components/CharDetails';
-import { Link, Outlet, Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes  } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -31,12 +31,12 @@ const CharDetailsPage = () => {
 function App() {
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/character/charName">Character Details</Link></li>
-        </ul>
-      </nav>
+      {/* <nav>
+        <ul> */}
+          {/* <li><Link to="/">Home</Link></li> */}
+          {/* <li><Link to="/character/charName">Character Details</Link></li> */}
+        {/* </ul>
+      </nav> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
