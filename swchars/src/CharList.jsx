@@ -8,7 +8,7 @@ export default function CharList() {
       .then(data => {
         return (
           <>
-            {data.map((character) => (
+            {data.results.map((character) => (
               <div 
                 key={character.height}
                 className="card m-2 p-2"
@@ -20,7 +20,8 @@ export default function CharList() {
             ))}
           </>
         )
-      });
+      }
+      );
   })
   return (
     <h1>Character List</h1>
