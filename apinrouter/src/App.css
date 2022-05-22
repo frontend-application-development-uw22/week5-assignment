@@ -38,6 +38,25 @@
 }
 .div-style {
   border: solid 1px;
+  width: 1050px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  float: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+
+}
+.header-image {
+  width: 1070px;
+  height: 200px;
+}
+.header-div {
+  width: 1050px;
+  border: solid 1px;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+
+}
+.details-div {
+  justify-content: center;
 }

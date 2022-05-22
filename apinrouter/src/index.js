@@ -12,8 +12,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="listingAll" element={<ListingAll />}> </Route>
-        <Route path="listingDetails/:name/:url" element={<ListingDetails />}></Route>
+        <Route path="listingAll" element={<ListingAll />}></Route>
+        <Route path="listingDetails/:id/:name/:type" element={<ListingDetails />}></Route>
       </Routes>
     </BrowserRouter>
 );
