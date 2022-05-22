@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import PropTypes from 'prop-types'
 
-function Home({ character }) {
+function CharacterProfile({ character }) {
   const [profile, setProfile] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const[hasError, setHasError] = useState(false);
@@ -11,7 +11,7 @@ function Home({ character }) {
   //   const getCharacter = async () => {
   //     try { 
   //       const reply = await fetch(`https://swapi.dev/api/people/?search=${character}`);
-  //       const data= await reply.json();
+  //       const data= await reply.j/:characterNameson();
   //       setProfile(data.results[0]);
   //       setIsLoading(false);
   //     } catch {
@@ -28,7 +28,8 @@ function Home({ character }) {
       .then(
         data => {
           setIsLoading(false);
-          setProfile(data.results[0])
+          // setProfile(data.results[0]);
+          console.log(profile.results[0]);
         },
         // Error handling here to avoid .catch{}-ing unrelated errors
         error => {
@@ -47,13 +48,13 @@ function Home({ character }) {
     <div>Sorry, an error occured, please try again later.</div>
   }
 
-  return (
-    <div>
-      <h2>{profile.name}</h2>
-    </div>
-  )
+  // return (
+  //   <div>
+  //     <h2>{profile.results[0].name}</h2>
+  //   </div>
+  // )
 }
 
-// Home.propTypes = {}
+// CharacterProfile.propTypes = {}
 
-export default Home
+export default CharacterProfile
