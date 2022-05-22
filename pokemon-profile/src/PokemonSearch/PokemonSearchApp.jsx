@@ -1,25 +1,29 @@
 import React, {useEffect, useState} from 'react';
 import AllPokemonImgCard from '../AllPokemonList/AllPokemonImgCard';
 import { useNavigate, useParams } from "react-router-dom";
-import AllPokemon from '../AllPokemonList/AllPokemon'
+
 export default function PokemonSearchApp () {
     const [pokemon, setPokemon] = useState(undefined);
     const {pokemonName} = useParams();
     const [loading, setLoading] = useState(true);
+    const [error, setHasError] = useState(false);
+
     const navigate = useNavigate();
-    console.log(pokemonName)
+    
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         .then((response) => response.json())
         .then((data) => {
             setPokemon(data); 
             setLoading(false);
-            console.log(pokemon)
-        })
+        }).catch(() => setHasError(true));
     },[pokemonName]);
 
     if (loading) {
         return <div className ="AllPokemon__loadingdiv">Loading...</div>;
+      }
+      if(error) {
+          return <div>No such pokemon name exist. Please try with different name.</div>
       }
     
       const goBack = () => {

@@ -31,6 +31,12 @@
 }
 .AllPokemonImgCard__div h4 {
     text-align: center;
+    margin-bottom: 2px;
+}
+.AllPokemonImgCard__div p {
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top:0px;
 }
 .AllPokemonList__header {
     padding: 2%;
@@ -56,3 +62,31 @@
 .PokemonSearchApp__backBtn button {
     padding:10px;
 }
+.heart{
+    margin-left:1%;
+}
+
+
+.app__navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .app__navbar li {
+    float: left;
+  }
+  
+  .app__navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .app__navbar li a:hover {
+    background-color: #111;
+  }
