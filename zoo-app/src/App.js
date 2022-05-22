@@ -8,6 +8,7 @@ const Home = () => {
     
     return (
     <div>
+      
       <h1>Zoo Animals!</h1>
       <ZooApp/>
     </div>

@@ -39,7 +39,6 @@ function ZooApp() {
     
     return (
         <main>
-            <h2>Hello</h2 >
             <div>
                 {animals.map((animal, idx) =>
                     <Animals
