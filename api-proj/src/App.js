@@ -1,6 +1,10 @@
 import './App.css';
-import Home from './Home';
+// import Home from './Home';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+const Home = () => <h1>Home</h1>;
+const Character = () => <h1>Character</h1>;
 
 function App() {
   const [searchInput, setSearchInput] = useState('');
@@ -11,12 +15,16 @@ function App() {
 
   return (
     <div className="">
-      <form onSubmit={onFormSubmit}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="character" element={<Character />} />
+      </Routes>
+      {/* <form onSubmit={onFormSubmit}>
         <label htmlFor="search-input">Search: </label>
         <input id="search-input" />
         <button type="Submit">Find Character</button>
       </form>
-      {searchInput && <Home character={searchInput} />}
+      {searchInput && <Home character={searchInput} />} */}
     </div>
   );
 }
