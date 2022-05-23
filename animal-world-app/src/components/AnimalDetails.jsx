@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
  
 
 function AnimalDetails() {
 
   const { id } = useParams();
-
+  console.log(id);
   console.log({ id });
+  const seaID =(Object.values(id)); 
+  console.log(seaID);
 
   const [animalDetail, setAnimalDetail] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  // const baseURL = `https://acnhapi.com/v1a/sea/`;
-  // const url = `${baseURL}${id}`;
 
-  console.log({ id });
+
+  
 
   useEffect((id) => {
-    fetch(`https://acnhapi.com/v1a/sea/` + {id})
+  fetch(`https://acnhapi.com/v1a/sea/` + seaID)
 
       .then(response => response.json())
 
@@ -54,15 +55,12 @@ function AnimalDetails() {
       <div key={animalDetail.id} >
         <img className = "detail-img" src={animalDetail[`image_uri`]} alt={animalDetail[`file-name`]} />
         <div className="detail-info"  >
-          <p><span>Name:  </span> {animalDetail.name[`name-USen`]}</p>
+          <p><span>Name:  </span> {animalDetail.name[`name-USen`]} - {id}</p>
           <p><span>Speed:  </span>  {animalDetail.speed}</p>
           <p><span>Catch Phrase:  </span>  {animalDetail[`catch-phrase`]}</p>
           <p><span>Fun Facts:  </span>  {animalDetail[`museum-phrase`]}</p>
 
         </div>
-        <ul>
-          <li className="link" ><Link to="/">Return Home</Link></li>
-        </ul>
       </div>
 
     </div>
