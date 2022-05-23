@@ -13,7 +13,6 @@ function App() {
           element={<Details />}
         />
       </Routes>
-      <CharList />
     </div>
   );
 }
