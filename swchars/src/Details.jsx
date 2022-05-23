@@ -19,12 +19,12 @@ export default function Details() {
         <div className="card m-2 p-2">
           <div className="card-body">
             <div className="card-title">
-                {characterDetails.name}
+                <h3>{characterDetails.name}</h3>
             </div>
             <div className="card-text">
-              Height: {characterDetails.height}cm
-              Weight: {characterDetails.mass}kg
-              Eye Color: {characterDetails.eye_color}
+              <p>Height: {characterDetails.height}cm</p>
+              <p>Weight: {characterDetails.mass}kg</p>
+              <p>Eye Color: {characterDetails.eye_color}</p>
             </div>
           </div>
         </div>

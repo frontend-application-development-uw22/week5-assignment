@@ -1,7 +1,7 @@
 import './App.css';
 import CharList from './CharList';
 import Details from './Details';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (

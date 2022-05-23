@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CharList() {
   const [character, setCharacter] = useState([]);
@@ -17,12 +18,12 @@ export default function CharList() {
         return(
           <div key={index} className="card m-2 p-2">
             <div className="card-body">
-              <h3 className="card-title">
-                  {char.name}
-              </h3>
-              <button className="btn btn-primary btn-sm" characterIndex={index}>
-                More Details
-              </button>
+              <Link 
+                to="details/index"
+                className="card-title"
+              >
+                {char.name}
+              </Link>
             </div>
           </div>
         )})}
