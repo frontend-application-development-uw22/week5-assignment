@@ -7,7 +7,7 @@ function AnimalDetails() {
   const { id } = useParams();
   console.log(id);
   console.log({ id });
-  const seaID =(Object.values(id)); 
+  const seaID =id; 
   console.log(seaID);
 
   const [animalDetail, setAnimalDetail] = useState([]);
