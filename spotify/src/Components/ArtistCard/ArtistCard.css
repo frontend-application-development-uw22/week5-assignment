@@ -1,13 +1,22 @@
-.artist-card {
+.artist-card--small {
   max-width: 100px;
 }
 
 .artist-card__image {
+  object-fit: cover;
+}
+
+.artist-card__image--small {
   height: 100px;
   width: 100px;
-  object-fit: cover;
   border-radius: 8px;
   transition: transform ease 0.3s;
+}
+
+.artist-card__image--medium {
+  height: 240px;
+  width: 200px;
+  border-radius: 10px;
 }
 
 .artist-card__image:hover {

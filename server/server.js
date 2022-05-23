@@ -90,18 +90,21 @@ app.get("/me", async (req, res) => {
     .then((data) => res.send(data));
 });
 
-app.get("/play", async (req, res) => {
-  fetch("https://api.spotify.com/v1/me/player/play", {
-    method: "PUT",
+app.get("/albums", async (req, res) => {
+  const accessToken = req.query.accessToken;
+  console.log(accessToken);
+  const id = req.query.id;
+  console.log(id);
+
+  await fetch(`https://api.spotify.com/v1/artists/${id}/albums`, {
     headers: {
-      Authorization:
-        "Bearer " +
-        "BQAt8qUqlWnCZ2-c2mGsJpe8RFERHT3bqtv2VcH3ng_l0GGw9xDrOvrOzTqmXTTD7xLuIroj8WbqzoAgj7thtCQDjRUBO8FK8hPpUyuNqTw7yLJvYsmP-FqewQEw5qUjhiz1roXoZAqwe03ICtU08ALZ6pjuff7pYfSzNlqiHX6QSqzQ9LpkusGizptXK4x5j_oD7VpvEm8&token_type=Bearer&expires_in=3600&refresh_token=AQDlMx44AEQ_0tyfMEmSdbhOEGwXdNQ2VNoWdh8Hm57zPuf5PyNf85cNDowMwFg9q4CVq3-94xJ-YGfjkYdrlTMdvihRprB1bP0xLmuA5l95yVfOELNJSigLcuM5uT8Q7F0&scope=playlist-read-private%20user-modify-playback-state%20user-follow-read%20user-read-playback-state%20user-read-currently-playing%20user-top-read%20user-read-private",
+      Authorization: "Bearer " + accessToken,
       "Content-Type": "application/json",
+      "User-Agent": "User-Agent: Mozilla/5.0",
     },
-    body: { context_uri: "spotify:album:5ht7ItJgpBH7W6vJ5BqpPr" },
   })
     .then((res) => res.json())
     .then((data) => res.send(data));
 });
+
 app.listen(8000, function () {});

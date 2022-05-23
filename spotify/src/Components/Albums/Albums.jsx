@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export default function Albums({ accessToken }) {
   const [albums, setAlbums] = useState();
@@ -25,3 +26,7 @@ export default function Albums({ accessToken }) {
     </div>
   );
 }
+
+Albums.propTypes = {
+  accessToken: PropTypes.string.isRequired,
+};

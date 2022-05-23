@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./Playlists.css";
 
 export default function Playlists({ accessToken }) {
@@ -26,17 +27,15 @@ export default function Playlists({ accessToken }) {
         {dataLoaded &&
           playlists.items.map((playlist) => {
             return (
-              <div className="playlists__details">
+              <div key={playlist.id} className="playlists__details">
                 <div>
                   <img
                     className="playlists__image"
                     src={playlist.images[0].url}
-                    alt=""
+                    alt={playlist.name}
                   />
                 </div>
-                <p className="" playlists__name>
-                  {playlist.name}
-                </p>
+                <p className="playlists__name">{playlist.name}</p>
               </div>
             );
           })}
@@ -44,3 +43,7 @@ export default function Playlists({ accessToken }) {
     </div>
   );
 }
+
+Playlists.propTypes = {
+  accessToken: PropTypes.string.isRequired,
+};
