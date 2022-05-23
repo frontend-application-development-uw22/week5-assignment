@@ -8,7 +8,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<CharList />} />
-        <Route path="details" element={<Details />} />
+        <Route 
+          path="details/:index"
+          element={<Details />}
+        />
       </Routes>
       <CharList />
     </div>

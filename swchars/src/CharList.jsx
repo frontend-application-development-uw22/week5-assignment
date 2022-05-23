@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function CharList() {
   const [character, setCharacter] = useState([]);
+  const [selected, setSelected] = useState('');
   
   useEffect(() => {
     fetch(`https://swapi.dev/api/people/`)
@@ -14,13 +15,14 @@ export default function CharList() {
     <div>
       {character.map((char, index) => {
         return(
-          <div className="card m-2 p-2">
+          <div key={index} className="card m-2 p-2">
             <div className="card-body">
-              <div 
-                className="card-title" 
-                key={index}>
+              <h3 className="card-title">
                   {char.name}
-              </div>
+              </h3>
+              <button className="btn btn-primary btn-sm" characterIndex={index}>
+                More Details
+              </button>
             </div>
           </div>
         )})}
