@@ -5,18 +5,15 @@ import { useParams } from 'react-router-dom';
 function AnimalDetails() {
 
   const { id } = useParams();
-  console.log(id);
-  console.log({ id });
+  // console.log(id);
+  // console.log({ id });
   const seaID =id; 
-  console.log(seaID);
+  // console.log(seaID);
 
   const [animalDetail, setAnimalDetail] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-
-
-  
-
+ 
   useEffect((id) => {
   fetch(`https://acnhapi.com/v1a/sea/` + seaID)
 
@@ -36,7 +33,7 @@ function AnimalDetails() {
       );
 
 
-  }, [id]);
+  }, [seaID]);
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -46,9 +43,7 @@ function AnimalDetails() {
     return <p>An error has occurred.  Please try again.</p>
   }
 
-  // console.log(animalDetail);
-
-
+ 
   return (
 
     <div>

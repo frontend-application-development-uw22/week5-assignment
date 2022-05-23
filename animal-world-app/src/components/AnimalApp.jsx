@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import Info from './Info';
-// import Info from './Info';
 
-
-function AnimalApp(id) {
+function AnimalApp() {
 
     const [animals, setAnimals] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
-    // const [animalDetails, setAnimalDetails] = useState([]);
-
-
-
-    // const history = useHistory();
-
+ 
     useEffect(() => {
         fetch('https://acnhapi.com/v1a/sea/')
 
@@ -43,11 +35,6 @@ function AnimalApp(id) {
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
-
-    // console.log(animalDetails.name);
-    // console.log(animals);
-
-    // console.log(seaCreatures);
 
     return (
         <main>
