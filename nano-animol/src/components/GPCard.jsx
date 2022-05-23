@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import GPPage from './GPPage';
 
@@ -9,15 +8,10 @@ function GPCard({cardId, gp}) {
   const gpId = gp.id;
   const gpAge = gp.age;
   const gpGender = gp.gender;
+  const gpSpecies = gp.species;
   const gpPhotos = gp.photos;
-  const gpDescription = gp.description;
   const gpSpecialNeeds = gp.attributes.special_needs;
-  const locCity = gp.contact.address.city;
-  const locState = gp.contact.address.state;
-  const locEmail = gp.contact.email;
   const locDistance = gp.distance;
-  const locPhone = gp.contact.phone;
-  const locId = gp.organization_id;
   const imgAlt = `Image of ${gpName}.`;
 
   const specialNeedsClasses =
@@ -31,16 +25,29 @@ function GPCard({cardId, gp}) {
       element={<GPPage />}
     >
       <div id={cardId} className="gpcard">
-        <img src={gpPhotos[0].medium} alt={imgAlt}/>
-        {gpName} {locDistance.toFixed(2)} miles
+        <div className="gpcard-img">
+          <img src={gpPhotos[0].medium} alt={imgAlt}/>
+        </div>
+        <div className="gpcard-details">
+          <p className="gpcard-name">
+            {gpName}
+          </p>
+          <p className="gpcard-description">
+            {gpAge} {gpGender.toLowerCase()} {gpSpecies.toLowerCase()}
+          </p>
+          <p className="gpcard-distance">
+            {locDistance.toFixed(2)} miles
+          </p>
+        </div>
       </div>
     </Link>
   );
 
 }
 
-// GPCard.propTypes = {
-  
-// }
+GPCard.propTypes = {
+  cardId: PropTypes.string.isRequired,
+  gp: PropTypes.object.isRequired
+}
 
 export default GPCard;

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useLocation, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {getAccessToken, getGPData} from '../get-data.js';
 import Loading from './Loading.jsx';
 
@@ -17,10 +17,9 @@ function GPPage() {
       setGPData(gotGPData.animal);
       setGPPhotos(gotGPData.animal.photos);
       setLoading(false);
-      console.log(gpData);
     }
     refreshData();
-  }, [gpData]);
+  }, []);
 
   if (loading) {
     return (
@@ -29,21 +28,22 @@ function GPPage() {
   }
 
   const specialNeedsClasses = 
-    gpData.attributes.special_needs ? "special-needs" : "special-needs hidden";
+    gpData.attributes.special_needs ? "specialneeds" : "specialneeds hidden";
   
   return (
     <div className="gppage">
-      <h1>{gpData.name}</h1>
-      <img src={gpPhotos[0].large}/>
-      <p>{gpData.species}</p>
-      {gpData.age} ⚥{gpData.gender}
-
-      <p className={specialNeedsClasses}>⛨ Special Needs</p>
-
-      {gpData.contact.email} {gpData.contact.phone}
-
-      {gpData.contact.address.city} {gpData.contact.address.state} {gpData.contact.address.postcode}
-      <button href={gpData.url}>Adopt</button>
+      <div className="gppage-img">
+        <img src={gpPhotos[0].large}/>
+      </div>
+      <div className="gppage-details">
+        <h1>{gpData.name}</h1>
+        <p><i>{gpData.age} {gpData.gender.toLowerCase()} {gpData.species.toLowerCase()}</i></p>
+        <p>❝ {gpData.description} ❞</p>
+        <p className={specialNeedsClasses}><span className="specialneeds-glyph">⛨</span> Special Needs</p>
+        <p><b>Contact |</b> {gpData.contact.email} {gpData.contact.phone}</p>
+        <p><b>Location |</b> {gpData.contact.address.city}, {gpData.contact.address.state} {gpData.contact.address.postcode}</p>
+        <a href={gpData.url}><button href={gpData.url}>Adopt</button></a>
+      </div>
     </div>
   );
 

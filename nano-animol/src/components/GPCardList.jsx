@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import GPCard from './GPCard';
+import PropTypes from 'prop-types';
 
-function GPCardList({gpData, accessToken}) {
+function GPCardList({gpData}) {
 
   let iKey = -1;
   const gpCardList = gpData.map((gp) => {
@@ -19,6 +20,11 @@ function GPCardList({gpData, accessToken}) {
       {gpCardList}
     </div>
   );
+}
+
+GPCardList.propTypes = {
+  gpData: PropTypes.array.isRequired,
+  accessToken: PropTypes.string.isRequired
 }
 
 export default GPCardList;

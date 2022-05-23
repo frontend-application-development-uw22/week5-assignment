@@ -58,9 +58,9 @@ async function getGPData(accessToken, gpId) {
 
 // getGPListData ///////////////////////////////////////////////////////////////
 // Returns list of guinea pigs,
-// given a petfinder.com [accessToken].
-const getGPListData = async (accessToken) => {
-  const gotGPListData = fetch("https://api.petfinder.com/v2/animals/?type=small-furry&location=98405&sort=distance", {
+// given a petfinder.com [accessToken] and the [zip] to search.
+const getGPListData = async (accessToken, zip) => {
+  const gotGPListData = fetch(`https://api.petfinder.com/v2/animals/?type=small-furry&location=${zip}&sort=distance`, {
     headers: {
       Authorization: `Bearer ${accessToken}`
     }

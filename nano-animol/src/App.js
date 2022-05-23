@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom/client";
-import {Link, Outlet, Route, Routes, useLocation, useNavigate, useParams}
+import {Route, Routes}
   from "react-router-dom";
 import './App.css';
 import {getAccessToken, getGPListData} from './get-data.js';
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
 import GPCardList from './components/GPCardList';
 import GPPage from './components/GPPage';
 import Loading from './components/Loading';
@@ -17,8 +19,7 @@ function App() {
   useEffect(() => {
     const refreshData = async () => {
       const gotAccessToken = await getAccessToken();
-      setAccessToken(gotAccessToken);
-      const gotGPData = await getGPListData(gotAccessToken);
+      const gotGPData = await getGPListData(gotAccessToken, 98405);
       setGPData(gotGPData);
       setLoading(false);
     }
@@ -27,16 +28,21 @@ function App() {
 
   if (loading) {
     return (
-      <Loading />
+      <>
+        <Header />
+        <Loading />
+      </>
     )
   }
 
   return (
     <div className="App">
+      <Header />
+      <SearchBar setGPData={setGPData} setLoading={setLoading} />
       <Routes>
         <Route 
           path="/" 
-          element={<GPCardList gpData={gpData} accessToken={accessToken}/>}
+          element={<GPCardList gpData={gpData}/>}
         />
         <Route 
           path="guinea-pigs/:gpId"
