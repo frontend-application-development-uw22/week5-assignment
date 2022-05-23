@@ -51,17 +51,18 @@ function AnimalApp(id) {
 
     return (
         <main>
-            <div className="row info">
+            <div className="column list-items">
                 {animals.map((animal, id) =>
+                    <section  >
 
-                    <div className="row border" key={id}>
-                        <div className="info row">
-                            <img src={animal.icon_uri} alt={animal.name} />
-                            <h2><span>Name: </span>{animal.name["name-USen"]} - <span>id: </span> {animal.id}</h2>
+                        <div className="row border" key={id}>
+                            <div className="info row">
+                                <img src={animal.icon_uri} alt={animal.name} />
+                                <h2><span>Name: </span>{animal.name["name-USen"]} - <span>id: </span> {animal.id}</h2>
+                            </div>
+                            <Link to={`/seaID/${animal.id}`}><button >More Info</button></Link>
                         </div>
-                        <Link to={`/seaID/${animal.id}`}><button >Species Info</button></Link>
-                    </div>
-
+                    </section>
                 )}
             </div>
 
