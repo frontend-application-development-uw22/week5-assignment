@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: skyblue;
+}
+
+.container {
+  width:70%;
+  margin-left: 15%;
+
+}
+
+.row {
+  display: flexbox;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.column {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+h1 {
+  margin-top: .5rem;
+  margin-bottom: 2rem;
+  color: blue
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+span {
+  font-weight: bold;
+  color: rgb(197, 45, 45);
+}
+
+button {
+  margin: 4rem;
+  background-color: blue;
+  color: white;
+  height: 30%;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+}
+
+button a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: blue;
+
+}
+
+ .list-items {
+margin-bottom: 5%;
+}
+
+.border {
+  border: .25rem solid rgb(197, 45, 45);
+  border-bottom: .12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding-left: 5%;
+
+
+}
+
+.info {
+  margin-bottom: 4rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.info p {
+  text-align: left;
+}
+
+.info img {
+  text-align: left;
+  margin: 1% 10%;
+  padding-right: 10%;
+  margin-right: auto;
+}
+
+.detail-img {
+  max-height: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+ 
+}
+
+.detail-info {
+  text-align:left;
+  margin-bottom: 10rem;
+
+}
+
+.detail-info p {
+  text-align:left;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+li a {
+  color: black;
+
+}
