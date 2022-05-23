@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 
 export default function Details() {
   const { index } = useParams();
+  // const correctedIndex = index + 1;
   const [characterDetails, setCharacterDetails] = useState({});
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Details() {
 
   return (
     <>
-      <h1>Details</h1>
+      <h1 className="mt-3">Details</h1>
       <div>
         <div className="card m-2 p-2">
           <div className="card-body">
@@ -29,6 +30,7 @@ export default function Details() {
           </div>
         </div>
       </div> 
+      <Link to="/">Back to Character List</Link>
     </>
   )
 }

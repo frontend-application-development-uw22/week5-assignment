@@ -14,12 +14,13 @@ export default function CharList() {
     
   return (
     <div>
+      <h1 className="mt-3">Character List</h1>
       {character.map((char, index) => {
         return(
           <div key={index} className="card m-2 p-2">
             <div className="card-body">
               <Link 
-                to="details/index"
+                to={`details/${index}`}
                 className="card-title"
               >
                 {char.name}
