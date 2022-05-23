@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+.home-container{
+  background-color: lightslategrey;
+  padding: 1%;
+}
+.pokedex-container{
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  font-size: 3em;
+  color: white;;
+}
+
+.entry-header{
+  margin-bottom: -5%;
+  color: lightslategrey;
+}
+.home-link{
+  position:fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 1%;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: rgba(60, 60, 60, 0.75);
+}
+
+.scroll-btn{
+  padding: 1%;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: rgba(60, 60, 60, 0.75);
+  border: none;
+  margin: 1%;
+}
+
+.list-container{
+  background-color: rgba(100,100,100, 0.35);
+  border-radius: 15px;
+  border: white 2px solid;
+  margin: 1%;
+}
+.list-container:hover{
+  background-color: rgba(10, 10, 106, 0.6);
+  border: white 4px solid;
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.pokemon-name{
+  color: white;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 0.5%;
+  padding-left: 3%;
+  text-decoration: none;
+}
+.pokemon-name::first-letter{
+  text-transform: uppercase;
+}
+
+.pokemon-img{
+  width: 300px;
+  height: auto;
+}
+
+.pokemon-profile-name{
+  margin-top: -0.5%;
+}
+
+.pokemon-profile-name::first-letter{
+  text-transform: uppercase!important;
+}
+
+.info-responses::first-letter{
+  text-transform: uppercase!important;
+}
+
+.arrow{
+  float: right;
+  font-weight: 600;
+  padding-right: 3%;
+}
+
+.pokemon-info-container{
+  padding: 1%;
+  color: white;
+  background-color: lightslategrey;
+  border: 5px solid rgba(45, 45, 60, 0.5);
+  border-radius: 15px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2%;
+  font-size: 1.5em;
+}
+
+.info-label{
+  font-weight: 600;
+  display: inline-block;
+}
+.info-responses{
+  display: inline-block;
+}
+
+.pokemon-info{
+  display: inline-block;
+}
+
+
