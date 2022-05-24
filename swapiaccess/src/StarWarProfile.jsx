@@ -75,6 +75,9 @@ export default function StarWarProfile ( {userName}) {
                     <tr><th>Birth Year</th><td>{profile.birth_year}</td></tr>
                 </tbody>
             </table>
+            <Link to='/'>Return to Star War People List</Link>
+            <br />
+            <br />
         </div>
     );
 }
