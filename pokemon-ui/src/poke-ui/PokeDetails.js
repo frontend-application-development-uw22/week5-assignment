@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-//import PokeDetailsPage from './PokeDetailsPage'
+import { Link } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 
-export default function PokeDetails({pokemon, selectPokemon}) {
+export default function PokeDetails({pokemon, selectPokemon, selectAllPokemon}) {
     const [pokemonDetails, setPokemonDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -11,9 +11,11 @@ export default function PokeDetails({pokemon, selectPokemon}) {
           .then(response => response.json())
           .then(data => {
             setPokemonDetails(data);
+            selectAllPokemon(data);
+            //console.log(data)
             setIsLoading(false);
           });
-      },[pokemon])
+      },[pokemon,selectAllPokemon])
 
     return (
         <div className='singlePokemon' onClick={() => selectPokemon(pokemonDetails)}>
@@ -21,8 +23,10 @@ export default function PokeDetails({pokemon, selectPokemon}) {
             {isLoading !== true && (
                 <>
                 <div>
-                    <img src={pokemonDetails.sprites.other["official-artwork"].front_default} alt={pokemonDetails.name} />
-                    <h2>{pokemonDetails.id}. {pokemonDetails.name}</h2>
+                    <Link to={"pokemon/"+pokemonDetails.id}>
+                        <img src={pokemonDetails.sprites.other["official-artwork"].front_default} alt={pokemonDetails.name} />
+                        <h2>{pokemonDetails.id}. {pokemonDetails.name}</h2>
+                    </Link>
                 </div>
                 </>
             )}

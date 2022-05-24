@@ -8,11 +8,16 @@ import PokeDetailsPage from './poke-ui/PokeDetailsPage'
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [pokemonpage, setPokemonPage]  = useState(undefined);
+  const [allPokemon, setAllPokemon] = useState('');
   const [selectedPokemon, setSelectedPokemon] = useState('');
 
-  const selectPokemon = (pokemonDetails) => {
-    setSelectedPokemon(pokemonDetails);
+  const selectPokemon = (pokemonDetail) => {
+    setSelectedPokemon(pokemonDetail);
   };
+
+  const selectAllPokemon = (pokemonDetails) => {
+    //setAllPokemon(allPokemon.push(pokemonDetails));
+  }
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
@@ -22,13 +27,15 @@ function App() {
           <PokeCharacters 
             pokemons = {data.results}
             selectPokemon = {selectPokemon}
+            selectAllPokemon = {selectAllPokemon}
           />)
+        setAllPokemon(data.results);
         setIsLoading(false) 
       })
       .catch(console.error)
   },[]);
-
-  //console.log(selectedPokemon); 
+  
+  //console.log(allPokemon);
 
   return (
     <div className="App">
@@ -37,7 +44,7 @@ function App() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to={"pokemon/"+selectedPokemon.name} >Last Pokemon Selected: {selectedPokemon.name}</Link>
+          <Link to={"pokemon/"+selectedPokemon.id} >Last Pokemon Selected: {selectedPokemon.name}</Link>
         </li>
       </ul>
       {isLoading === true && <div>loading...</div>}  
@@ -50,6 +57,7 @@ function App() {
                 element={
                   <PokeDetailsPage
                     selectedPokemon = {selectedPokemon}
+                    allPokemon = {allPokemon}
                   />
                 } 
               />
