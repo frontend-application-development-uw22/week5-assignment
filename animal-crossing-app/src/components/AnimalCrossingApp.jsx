@@ -39,11 +39,11 @@ function AnimalCrossingApp() {
     return (
         <main>
             <div>
-                {villagers.map((villager, idx) =>
-                    <div key='index'>
+                {villagers.map((villager, id) =>
+                    <div key ={id}>
                     <h2>{villager.name["name-USen"]}</h2>
                     <h3>ID: {villager.id}</h3>
-                    <button><Link to="villager/:id">Villager Info</Link></button>
+                    <Link to = {`/villager/${villager.id}`}><button>Villager Info</button></Link>
                 </div>
                 )}
             </div>

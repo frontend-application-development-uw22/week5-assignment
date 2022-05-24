@@ -2,24 +2,25 @@ import React from 'react';
 import './App.css';
 import AnimalCrossingApp from './components/AnimalCrossingApp';
 import VillagersInfo from './components/VillagerInfo';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useParams} from 'react-router-dom';
 
 const Home = () => { 
     
     return (
     <div>
-      
       <h1>Villagers!</h1>
       <AnimalCrossingApp/>
     </div>
   )};
 
   const InfoPage = () => { 
+  const {id} = useParams();
 
     return (
       <div>
       <h1>Villager Details</h1>
-      <VillagersInfo/>
+      <VillagersInfo 
+      id = {id}/>
       </div>
    );}
 
@@ -30,7 +31,7 @@ const Home = () => {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route
-      path="villager/:id"
+      path="/villager/:id"
       element={<InfoPage/>}
       />
       </Routes>

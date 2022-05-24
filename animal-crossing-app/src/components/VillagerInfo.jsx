@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-function VillagerInfo({ villager, id }) {
+function VillagerInfo() {
 
+    const {id} = useParams();
     const [villagerInfo, setVillagerInfo] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+    const villagerId = id;
 
-    useEffect(() => {
-        fetch('https://acnhapi.com/v1a/villagers/15')
+    useEffect((id) => {
+        fetch(`https://acnhapi.com/v1a/villagers/`+ villagerId)
 
             .then(response => response.json())
 
@@ -26,7 +28,7 @@ function VillagerInfo({ villager, id }) {
             );
 
 
-    }, []);
+    }, [villagerId]);
 
     if (isLoading) {
         return <p>Loading...</p>
