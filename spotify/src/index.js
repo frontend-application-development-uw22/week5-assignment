@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Login from "./Components/Login/Login";
-import Artist from "./Components/Artist/Artist";
 import Asset from "./Components/Asset/Asset";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

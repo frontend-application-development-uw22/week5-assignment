@@ -1,24 +1,24 @@
-.artist-card--small {
+.carousel-card--small {
   max-width: 100px;
 }
 
-.artist-card__image {
+.carousel-card__image {
   object-fit: cover;
 }
 
-.artist-card__image--small {
+.carousel-card__image--small {
   height: 100px;
   width: 100px;
   border-radius: 8px;
   transition: transform ease 0.3s;
 }
 
-.artist-card__image--medium {
+.carousel-card__image--medium {
   height: 240px;
   width: 200px;
   border-radius: 10px;
 }
 
-.artist-card__image:hover {
+.carousel-card__image:hover {
   transform: scale(1.1);
 }

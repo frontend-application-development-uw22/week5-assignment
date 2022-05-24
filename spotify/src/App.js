@@ -90,8 +90,14 @@ function App() {
             size="small"
             accessToken={accessToken}
             data={followedArtists}
+            heading="Followed Artists"
           />
-          <Carousel size="medium" accessToken={accessToken} data={playlists} />
+          <Carousel
+            size="medium"
+            accessToken={accessToken}
+            data={playlists}
+            heading="Top Playlists"
+          />
         </div>
       )}
     </div>
