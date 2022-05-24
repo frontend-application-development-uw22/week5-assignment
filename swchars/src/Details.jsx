@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 export default function Details() {
   const { index } = useParams();
-  // const correctedIndex = index + 1;
+  const id = index+1;
   const [characterDetails, setCharacterDetails] = useState({});
 
   useEffect(() => {
@@ -30,9 +30,14 @@ export default function Details() {
           </div>
         </div>
       </div> 
-      <Link to="/">Back to Character List</Link>
+      <Link to="/">&#11013; Back to Character List</Link>
     </>
   )
 }
 
-// Details.propTypes = {}
+Details.propTypes = {
+  name: PropTypes.string.isRequired,
+  height: propTypes.number.isRequired,
+  mass: propTypes.number.isRequired,
+  eye_color: PropTypes.string.isRequired,
+}

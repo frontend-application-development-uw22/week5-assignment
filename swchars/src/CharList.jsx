@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function CharList() {
   const [character, setCharacter] = useState([]);
@@ -15,6 +16,7 @@ export default function CharList() {
   return (
     <div>
       <h1 className="mt-3">Character List</h1>
+      <div>Select a character for more details</div>
       {character.map((char, index) => {
         return(
           <div key={index} className="card m-2 p-2">
@@ -30,4 +32,8 @@ export default function CharList() {
         )})}
     </div> 
   )
+}
+
+CharList.propTypes = {
+  name: PropTypes.string.isRequired,
 }
