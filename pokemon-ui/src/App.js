@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import PokePages from './poke-ui/PokePages';
+import PokePages from './poke-ui/PokeCharacters';
 
 function App() {
   // const [pokemons, setPokemons] = useState([]);
@@ -12,7 +12,7 @@ function App() {
       .then(response => response.json())
       .then(data => {
         // setPokemons(data)
-        setPokemonPage(<PokePages pokemons = {data.results}/>)
+        setPokemonPage(<PokeCharacters pokemons = {data.results}/>)
         setIsLoading(false) 
       })
       .catch(console.error)

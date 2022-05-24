@@ -1,7 +1,7 @@
 import PokeDetails from './PokeDetails'
 //import Proptypes from 'prop-types';
 
-export default function PokePages({pokemons}) {
+export default function PokeCharacters({pokemons}) {
     const pokerender = pokemons.map((pokemon,index) =>
       <PokeDetails
           key = {index}

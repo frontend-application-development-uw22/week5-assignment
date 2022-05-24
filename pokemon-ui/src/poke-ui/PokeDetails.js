@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 //import PropTypes from 'prop-types';
 
-export default function PokePages({pokemon}) {
+export default function PokeDetails({pokemon}) {
     const [pokemonDetails, setPokemonDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
