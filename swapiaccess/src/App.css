@@ -45,3 +45,9 @@ table, th, td {
 table {
   width: 100%;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

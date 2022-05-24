@@ -1,26 +1,53 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import profile from './Profile1.json'
+// import profile from './Profile1.json'
 
-export default function StarWarProfile ( {username}) {
+export default function StarWarProfile ( {userName}) {
     const [profile, setProfile] = useState(undefined);
     const [isLoading, setIsLoading ] = useState(true);
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
-        fetch(`https://swapi.dev/api/people/${username}`)
-        // fetch(`https://randomuser.me/api/?results=${username}`)
-            .then(response => response.json())
-            .then(data => {
+        fetch(`https://swapi.dev/api/people/${userName}`)
+        .then(response => response.json())
+        .then(
+            data => {
                 setProfile(data);
                 setIsLoading(false);
-                })
-            .catch ((error) => {
-                    console.log(error);
-                    setHasError(true);
-                    setIsLoading(false);
-            });
-    }, []);
+            },
+            error => {
+                console.log(error);
+                setHasError(true);
+                setIsLoading(false);
+            }
+        );
+
+        // const getUser = async () => {
+        //     try {
+        //     const response = await fetch(`https://swapi.dev/api/people/${userName}`);
+        //     const data = await response.json();
+        //     setProfile(data);
+        //     setIsLoading(false);
+        //     } catch {
+        //         setHasError(true);
+        //         setIsLoading(false);
+        //     }
+        // };
+        // getUser();
+
+        // // fetch(`https://randomuser.me/api/?results=${userName}`)
+        // fetch(`https://swapi.dev/api/people/${userName}`)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         setProfile(data);
+        //         setIsLoading(false);
+        //         })
+        //     .catch ((error) => {
+        //             console.log(error);
+        //             setHasError(true);
+        //             setIsLoading(false);
+        //     });
+    }, [userName]);
 
     if (isLoading) {
         return <p>Loading...</p>
@@ -32,17 +59,22 @@ export default function StarWarProfile ( {username}) {
 
     return (
         <div>
-            <h1>{profile.name}</h1>
+            <h2>Star War Profile for {profile.name}</h2>
             <table>
-                <tr><th>Facts</th><th>Value</th></tr>
-                <tr><td>Hair color</td><td>{profile.hair_color}</td></tr>
-                <tr><td>Skin color</td><td>{profile.skin_color}</td></tr>
-                <tr><td>Eye color</td><td>{profile.eye_color}</td></tr>
+                <thead>
+                    <tr><th>Facts</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><th>Hair color</th><td>{profile.hair_color}</td></tr>
+                    <tr><th>Skin color</th><td>{profile.skin_color}</td></tr>
+                    <tr><th>Eye color</th><td>{profile.eye_color}</td></tr>
+                    <tr><th>Birth Year</th><td>{profile.birth_year}</td></tr>
+                </tbody>
             </table>
         </div>
     );
 }
 
 StarWarProfile.protoTypes = {
-    username: PropTypes.string.isRequired
+    userName: PropTypes.string.isRequired
 }
