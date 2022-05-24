@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+//import PokeDetailsPage from './PokeDetailsPage'
 //import PropTypes from 'prop-types';
 
-export default function PokeDetails({pokemon}) {
+export default function PokeDetails({pokemon, selectPokemon}) {
     const [pokemonDetails, setPokemonDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -15,7 +16,7 @@ export default function PokeDetails({pokemon}) {
       },[pokemon])
 
     return (
-        <div>
+        <div className='singlePokemon' onClick={() => selectPokemon(pokemonDetails)}>
             {isLoading === true && <div>loading...</div>}
             {isLoading !== true && (
                 <>
