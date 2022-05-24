@@ -13,7 +13,6 @@ export default function Albums({ accessToken }) {
       .then((res) => res.json())
       .then((data) => {
         setAlbums(data);
-        console.log(albums);
       });
   }, []);
 

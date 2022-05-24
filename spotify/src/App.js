@@ -12,14 +12,14 @@ function useQuery() {
 
 function App() {
   const [profile, setProfile] = useState(null);
-  const [profileLoaded, setProfileLoaded] = useState(false);
+  const [profileLoaded, setProfileLoaded] = useState(null);
   const [accessToken, setAccessToken] = useState(false);
   const [followedArtists, setFollowedArtists] = useState([]);
   const [playlists, setPlaylists] = useState([]);
 
   let query = useQuery();
 
-  // Set access token state after successful user authentication
+  // Set access token state after successful user authentication with active Spotify account
   useEffect(() => {
     const getAccessToken = () => {
       setAccessToken(query.get("access_token"));
@@ -29,16 +29,6 @@ function App() {
       getAccessToken();
     }
   }, []);
-
-  useEffect(() => {
-    const storeAccessToken = () => {
-      localStorage.setItem("accessToken", accessToken);
-    };
-
-    if (accessToken) {
-      storeAccessToken();
-    }
-  });
 
   // Call to Spotify API to retrieve authenticated account details after access token has been set
   useEffect(() => {
@@ -91,12 +81,14 @@ function App() {
             accessToken={accessToken}
             data={followedArtists}
             heading="Followed Artists"
+            internal={true}
           />
           <Carousel
             size="medium"
             accessToken={accessToken}
             data={playlists}
             heading="Top Playlists"
+            internal={true}
           />
         </div>
       )}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
 import Carousel from "../Carousel/Carousel";
 import "./Asset.css";
 
@@ -16,6 +15,8 @@ export default function Artist() {
       .then((res) => res.json())
       .then((data) => setAlbumList(data.items));
   }, []);
+
+  console.log(albumList);
 
   return (
     <div className="app">
@@ -46,6 +47,7 @@ export default function Artist() {
           size="small"
           data={albumList}
           heading="Selected Albums"
+          target="external"
         />
       </div>
     </div>

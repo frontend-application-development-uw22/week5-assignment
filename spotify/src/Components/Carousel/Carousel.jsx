@@ -3,8 +3,13 @@ import "./Carousel.css";
 import PropTypes from "prop-types";
 import CarouselCard from "./CarouselCard";
 
-export default function Carousel({ accessToken, data, heading, size }) {
-  console.log(data);
+export default function Carousel({
+  accessToken,
+  data,
+  heading,
+  size,
+  internal,
+}) {
   return (
     <div className={`carousel--${size}`}>
       <h2 className="carousel-asset__heading">{heading}</h2>
@@ -15,6 +20,7 @@ export default function Carousel({ accessToken, data, heading, size }) {
             size={size}
             asset={asset}
             accessToken={accessToken}
+            internal={internal}
           />
         ))}
       </div>
