@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 export default function Details() {
   const { index } = useParams();
-  const id = index+1;
   const [characterDetails, setCharacterDetails] = useState({});
 
   useEffect(() => {

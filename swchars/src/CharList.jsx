@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function CharList() {
   const [character, setCharacter] = useState([]);
-  const [selected, setSelected] = useState('');
-  
+    
   useEffect(() => {
     fetch(`https://swapi.dev/api/people/`)
       .then(reply => reply.json())
@@ -21,8 +20,9 @@ export default function CharList() {
         return(
           <div key={index} className="card m-2 p-2">
             <div className="card-body">
+{/* Index +1 to compensate for arrays starting at 0*/}
               <Link 
-                to={`details/${index}`}
+                to={`details/${index+1}`}
                 className="card-title"
               >
                 {char.name}
