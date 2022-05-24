@@ -16,7 +16,7 @@ function App() {
   };
 
   const selectAllPokemon = (pokemonDetails) => {
-    //setAllPokemon(allPokemon.push(pokemonDetails));
+    setAllPokemon(allPokemon => [...allPokemon, {pokemonDetails}]);
   }
 
   useEffect(() => {
@@ -34,8 +34,6 @@ function App() {
       })
       .catch(console.error)
   },[]);
-  
-  //console.log(allPokemon);
 
   return (
     <div className="App">

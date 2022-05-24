@@ -11,11 +11,10 @@ export default function PokeDetails({pokemon, selectPokemon, selectAllPokemon}) 
           .then(response => response.json())
           .then(data => {
             setPokemonDetails(data);
-            selectAllPokemon(data);
-            //console.log(data)
+            selectAllPokemon(pokemonDetails);
             setIsLoading(false);
           });
-      },[pokemon,selectAllPokemon])
+      },[pokemonDetails, pokemon.url, selectAllPokemon])
 
     return (
         <div className='singlePokemon' onClick={() => selectPokemon(pokemonDetails)}>
