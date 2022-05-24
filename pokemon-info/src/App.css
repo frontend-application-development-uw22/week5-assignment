@@ -1,0 +1,117 @@
+body {
+    background-color: darkgray;
+}
+
+/*
+*/
+.top-nav-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.top-nav-bar ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.top-nav-bar li {
+    list-style: none;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+/* MAIN-PAGE-DISPLAY
+** child of ROOT
+*/
+.main-page-display {
+    width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.intro{
+    text-align: center;
+}
+
+/* ENCLOSURE
+** child of MAIN-PAGE-DISPLAY
+*/
+.enclosure {
+    width: 900px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+/* POKEMON-CARD
+*/
+.pokemon-card {
+    width: 210px;
+
+    background-color: lightgray;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    border-radius: 5%;
+
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-card h1 {
+    text-align: center;
+}
+
+.pokemon-card p {
+    text-align: center;
+}
+
+/* IMAGE-WRAP
+** child of POKEMON-CARD
+** its purpose is to center them image
+*/
+.image-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-card-expanded {
+    background-color: lightgray;
+
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+.pokemon-card-expanded h2 {
+    text-align: center;
+}
+
+.pokemon-card-expanded p {
+    text-align: center;
+}
+
+.pokemon-card-expanded ul li {
+    list-style: none;
+}
+
+.pokemon-card-expanded ul {
+    padding: 0;
+}
+
+.pokemon-card-expanded li {
+    text-align: center;
+    margin-bottom: 10px;
+}
