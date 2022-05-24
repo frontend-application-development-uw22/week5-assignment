@@ -4,15 +4,25 @@
   box-sizing:border-box;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  background-color: rgb(84, 84, 84);
+}
+
+.row {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 h1 {
+  color: yellow; 
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .info p {
+  color: white;
   text-align: left;
-  margin-left: 40%;
+  margin-left: 45%;
 }
 
 img {
@@ -25,9 +35,34 @@ img {
 
 }
 
+.icon {
+  max-height: 25%;
+  margin: 5%;
+  border: solid 1px white;
+  padding: 1rem;
+}
+
+.list {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.list-info {
+  margin-top: 3rem;
+}
 
 
 button {
   margin-top: 1rem;
+  background-color: white;
+  padding: 0.25rem;
+}
+
+h2 {
+  color: rgb(191, 218, 242);
+}
+
+a {
+  background-color: white;
 }
 

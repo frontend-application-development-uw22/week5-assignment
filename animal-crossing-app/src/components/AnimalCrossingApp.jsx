@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function AnimalCrossingApp() {
 
@@ -35,16 +35,19 @@ function AnimalCrossingApp() {
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
-    
+
     return (
         <main>
             <div>
                 {villagers.map((villager, id) =>
-                    <div key ={id}>
-                    <h2>{villager.name["name-USen"]}</h2>
-                    <h3>ID: {villager.id}</h3>
-                    <Link to = {`/villager/${villager.id}`}><button>Villager Info</button></Link>
-                </div>
+                
+                        <div className="row list" key={id}>
+                            <img className="icon" src={villager[`icon_uri`]} alt={villager[`file-name`]} />
+                            <div className="column list-info">
+                                <h2>{villager.name["name-USen"]}</h2>
+                                <Link to={`/villager/${villager.id}`}><button>Villager Info</button></Link>
+                            </div>
+                        </div>
                 )}
             </div>
         </main>

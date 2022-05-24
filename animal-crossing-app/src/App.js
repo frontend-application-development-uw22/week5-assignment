@@ -8,7 +8,7 @@ const Home = () => {
     
     return (
     <div>
-      <h1>Villagers!</h1>
+      <h1>Animal Crossing Villagers!</h1>
       <AnimalCrossingApp/>
     </div>
   )};
