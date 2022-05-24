@@ -37,7 +37,7 @@ export default function Details() {
 
 Details.propTypes = {
   name: PropTypes.string.isRequired,
-  height: propTypes.number.isRequired,
-  mass: propTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  mass: PropTypes.number.isRequired,
   eye_color: PropTypes.string.isRequired,
 }
