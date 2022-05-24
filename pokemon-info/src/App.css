@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+body {
+    background-color: darkgray;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*
+*/
+.top-nav-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top-nav-bar ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.top-nav-bar li {
+    list-style: none;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
-.App-link {
-  color: #61dafb;
+/* MAIN-PAGE-DISPLAY
+** child of ROOT
+*/
+.main-page-display {
+    width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.intro{
+    text-align: center;
+}
+
+/* ENCLOSURE
+** child of MAIN-PAGE-DISPLAY
+*/
+.enclosure {
+    width: 900px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+/* POKEMON-CARD
+*/
+.pokemon-card {
+    width: 210px;
+
+    background-color: lightgray;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    border-radius: 5%;
+
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-card h1 {
+    text-align: center;
+}
+
+.pokemon-card p {
+    text-align: center;
+}
+
+/* IMAGE-WRAP
+** child of POKEMON-CARD
+** its purpose is to center them image
+*/
+.image-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-card-expanded {
+    background-color: lightgray;
+
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+.pokemon-card-expanded h2 {
+    text-align: center;
+}
+
+.pokemon-card-expanded p {
+    text-align: center;
+}
+
+.pokemon-card-expanded ul li {
+    list-style: none;
+}
+
+.pokemon-card-expanded ul {
+    padding: 0;
+}
+
+.pokemon-card-expanded li {
+    text-align: center;
+    margin-bottom: 10px;
 }
