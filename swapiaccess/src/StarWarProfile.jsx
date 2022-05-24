@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom'
 // import profile from './Profile1.json'
 
 export default function StarWarProfile ( {userName}) {
@@ -60,6 +61,9 @@ export default function StarWarProfile ( {userName}) {
     return (
         <div>
             <h2>Star War Profile for {profile.name}</h2>
+            <Link to='/'>Return to Star War People List</Link>
+            <br />
+            <br />
             <table>
                 <thead>
                     <tr><th>Facts</th><th>Value</th></tr>
