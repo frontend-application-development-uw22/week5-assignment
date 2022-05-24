@@ -37,16 +37,22 @@ const FavoriteCharacter = () => {
   }
 
   return (
-    <div className={`${myCollection.length > 0 ? 'show' : 'hide'}`}>
-      <div className='header-comment'>
-        <Button text='Delete selected characters' onClick={DeleteItems} classBtn='btn danger' />
-        <div className="content">Check the checkbox on each character card and then click the button on the left to delete the selected items...</div>
-      </div>
-      <div className='container'>
-        {myCollection.map((item, idx) => <Card key={idx} item={item} />)}
-      </div>
-    </div>
-
+    <>
+      {myCollection && myCollection.length > 0 ? (
+        <>
+          <div className='header-comment'>
+            <Button text='Delete selected characters' onClick={DeleteItems} classBtn='btn danger' />
+            <div className="content">Check the checkbox on each character card and then click the button on the left to delete the selected items...</div>
+          </div>
+          <div className='container'>
+            {myCollection.map((item, idx) => <Card key={idx} item={item} />)}
+          </div>
+        </>
+        ): (
+          <div className="content">There is no favorite character here. Please go to Home page to select your favorite characters.</div>
+        )
+      }
+    </>
   )
 }
 
