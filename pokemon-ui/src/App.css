@@ -1,9 +1,18 @@
-/* .allPokemon{
-  display: flex;
-  flex-wrap: row wrap;
+.allPokemon{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
 }
 
 .singlePokemon{
   display: flex;
   flex-wrap: row wrap;
-} */
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.pokemonDetails{
+  display:grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+}

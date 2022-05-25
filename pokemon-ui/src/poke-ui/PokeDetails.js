@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default function PokeDetails({pokemon, selectPokemon, selectAllPokemon}) {
     const [pokemonDetails, setPokemonDetails] = useState([]);
@@ -11,10 +11,16 @@ export default function PokeDetails({pokemon, selectPokemon, selectAllPokemon}) 
           .then(response => response.json())
           .then(data => {
             setPokemonDetails(data);
-            selectAllPokemon(pokemonDetails);
             setIsLoading(false);
           });
-      },[pokemonDetails, pokemon.url, selectAllPokemon])
+      },[pokemon.url])
+
+    if (setIsLoading === false) {
+        selectAllPokemon(pokemonDetails);
+    }
+
+    //console.log(selectPokemon)
+    console.log(typeof selectedPokemon)
 
     return (
         <div className='singlePokemon' onClick={() => selectPokemon(pokemonDetails)}>
@@ -30,5 +36,11 @@ export default function PokeDetails({pokemon, selectPokemon, selectAllPokemon}) 
                 </>
             )}
         </div>
-    );
+    )
+}
+
+PokeDetails.propTypes = {
+    pokemon: PropTypes.object.isRequired,
+    selectedPokemon: PropTypes.func.isRequired,
+    selectAllPokemon: PropTypes.func.isRequired
 }
