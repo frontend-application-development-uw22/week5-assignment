@@ -37,13 +37,11 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
+      <ul className="navbar">
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to={"pokemon/"+selectedPokemon.id} >Last Pokemon Selected: {selectedPokemon.name}</Link>
-        </li>
+        {selectedPokemon !== "" && <li><Link to={"pokemon/"+selectedPokemon.id} >Last Pokemon Selected: {selectedPokemon.name}</Link></li>}  
       </ul>
       {isLoading === true && <div>loading...</div>}  
       {isLoading !== true && (
