@@ -1,0 +1,32 @@
+.allPokemon{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  margin-top: 60px;
+}
+
+.singlePokemon{
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.pokemonDetails{
+  display:grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+
+.navbar{
+  display:grid;
+  grid-template-columns: 72px 300px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  margin: 0;
+  top: 0; 
+  width: 100%; 
+  height: 60px;
+  background-color:white;
+}
