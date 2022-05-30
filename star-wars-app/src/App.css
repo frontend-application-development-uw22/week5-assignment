@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.list-container
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.list-cell
+{
+  display: grid;
+
+}
+
+.container
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.detail
+{
+  text-align: center;
+}
