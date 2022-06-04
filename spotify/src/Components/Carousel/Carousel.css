@@ -1,0 +1,10 @@
+.carousel {
+  margin-top: 60px;
+}
+
+.carousel-asset__card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: self-start;
+}

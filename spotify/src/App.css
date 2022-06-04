@@ -1,0 +1,7 @@
+body {
+  background-color: var(--green-light);
+}
+
+.app {
+  padding: 40px;
+}
