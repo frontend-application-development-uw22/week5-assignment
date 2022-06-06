@@ -13,9 +13,16 @@ function GPCard({cardId, gp}) {
   const gpSpecialNeeds = gp.attributes.special_needs;
   const locDistance = gp.distance;
   const imgAlt = `Image of ${gpName}.`;
+  const placeholderImgUrl = "https://i.imgur.com/ZCl4qbo.png";
 
   const specialNeedsClasses =
     gpSpecialNeeds ? "special-needs" : "special-needs hidden"
+
+  let imgSrc = placeholderImgUrl;
+
+  if (!(gpPhotos[0] === undefined) && !(typeof gpPhotos[0] == 'undefined')) {
+    imgSrc = gpPhotos[0].medium;
+  }
   
   return (
     <Link 
@@ -26,7 +33,7 @@ function GPCard({cardId, gp}) {
     >
       <div id={cardId} className="gpcard">
         <div className="gpcard-img">
-          <img src={gpPhotos[0].medium} alt={imgAlt}/>
+        <img src={imgSrc} alt={imgAlt}/>
         </div>
         <div className="gpcard-details">
           <p className="gpcard-name">

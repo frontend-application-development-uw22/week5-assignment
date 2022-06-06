@@ -9,13 +9,16 @@ function GPPage() {
   const [gpData, setGPData] = useState({});
   const [gpPhotos, setGPPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const placeholderImgUrl = "https://i.imgur.com/ZCl4qbo.png";
+  let imgSrc = placeholderImgUrl;
 
   useEffect(() => {
     const refreshData = async () => {
       const gotAccessToken = await getAccessToken();
       const gotGPData = await getGPData(gotAccessToken, gpId);
-      setGPData(gotGPData.animal);
-      setGPPhotos(gotGPData.animal.photos);
+      await setGPData(gotGPData.animal);
+      await setGPPhotos(gotGPData.animal.photos);
+      console.log(gpPhotos)
       setLoading(false);
     }
     refreshData();
@@ -33,7 +36,7 @@ function GPPage() {
   return (
     <div className="gppage">
       <div className="gppage-img">
-        <img src={gpPhotos[0].large}/>
+        <img src={imgSrc}/>
       </div>
       <div className="gppage-details">
         <h1>{gpData.name}</h1>

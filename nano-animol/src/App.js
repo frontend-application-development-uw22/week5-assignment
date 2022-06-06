@@ -37,26 +37,26 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <SearchBar setGPData={setGPData} setLoading={setLoading} />
-      <Routes>
-        <Route 
-          path="/" 
-          element={<GPCardList gpData={gpData}/>}
-        />
-        <Route 
-          path="guinea-pigs/:gpId"
-          element={<GPPage />} 
-        />
-        <Route
-          path="*"
-          element={
-            <main>
-              <p>404</p>
-            </main>
-          }
-        />
-      </Routes>
+        <Header />
+        <SearchBar setGPData={setGPData} setLoading={setLoading} />
+        <Routes>
+          <Route 
+            path="/" 
+            element={<GPCardList gpData={gpData}/>}
+          />
+          <Route 
+            path="guinea-pigs/:gpId"
+            element={<GPPage />} 
+          />
+          <Route
+            path="*"
+            element={
+              <main>
+                <p>404</p>
+              </main>
+            }
+          />
+        </Routes>
     </div>
   );
 }

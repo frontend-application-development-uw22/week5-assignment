@@ -23,8 +23,7 @@ function GPCardList({gpData}) {
 }
 
 GPCardList.propTypes = {
-  gpData: PropTypes.array.isRequired,
-  accessToken: PropTypes.string.isRequired
+  gpData: PropTypes.array.isRequired
 }
 
 export default GPCardList;
