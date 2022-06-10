@@ -1,0 +1,92 @@
+.AllPokemonImgCard__div{
+    width: 100%;
+    border: 1px solid black;
+}
+.AllPokemonImgCard__container {
+    display: flex;
+    width: 82%;
+    margin: 0 auto;
+}
+.allPokemon__container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.AllPokemonList__mainconatiner {
+    display: flex;flex-wrap: wrap;width: 90%;justify-content: center;
+}
+.AllPokemonImgCard__image{
+    width:100%;
+}
+.AllPokemon__container{
+    width:300px;
+    margin: 15px;
+}
+.AllPokemon_height{
+    float:right
+}
+.AllPokemon__loadingdiv{
+    width:100%;
+}
+.AllPokemonImgCard__div h4 {
+    text-align: center;
+    margin-bottom: 2px;
+}
+.AllPokemonImgCard__div p {
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top:0px;
+}
+.AllPokemonList__header {
+    padding: 2%;
+    text-align: center;
+    background: antiquewhite;
+}
+.PokemonSearchApp__imgDiv {
+    display:flex;
+    justify-content: center;
+    display: flex;
+    margin-top:20px;
+}
+.PokemonSearchApp__imgDiv .AllPokemonImgCard__div {
+    width:20%;
+}
+.PokemonSearchApp__content{
+    text-align: center;
+}
+.PokemonSearchApp__backBtn{
+    float:left;
+    
+}
+.PokemonSearchApp__backBtn button {
+    padding:10px;
+}
+.heart{
+    margin-left:1%;
+}
+
+
+.app__navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .app__navbar li {
+    float: left;
+  }
+  
+  .app__navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .app__navbar li a:hover {
+    background-color: #111;
+  }
