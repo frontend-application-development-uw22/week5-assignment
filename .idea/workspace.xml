@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d235000-6a27-44f1-9a54-33560d147b4f" name="Changes" comment="Final commit, added README.md back in">
-      <change afterPath="$PROJECT_DIR$/star-dev/public/apple-touch-icon.png" afterDir="false" />
+    <list default="true" id="0d235000-6a27-44f1-9a54-33560d147b4f" name="Changes" comment="updated icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/star-dev/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/star-dev/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/star-dev/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/star-dev/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/star-dev/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/star-dev/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +19,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="29EZPJR6Qx8rXgLUrf6LmTNiSI3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,7 +34,7 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "pokemon-app",
-    "last_opened_file_path": "C:/Users/pablo/week5-assignment/star-dev/public",
+    "last_opened_file_path": "E:/G7_FILES/C/Users/Pablo/week5-assignment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,7 +68,8 @@
       <workItem from="1653233060024" duration="14498000" />
       <workItem from="1653256444117" duration="5194000" />
       <workItem from="1653346760871" duration="3223000" />
-      <workItem from="1705894857112" duration="1685000" />
+      <workItem from="1705894857112" duration="3607000" />
+      <workItem from="1710785891522" duration="151000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1652847299407</created>
@@ -275,7 +274,23 @@
       <option name="project" value="LOCAL" />
       <updated>1653349913637</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="updated icons">
+      <option name="closed" value="true" />
+      <created>1705896594378</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1705896594378</updated>
+    </task>
+    <task id="LOCAL-00031" summary="updated icons">
+      <option name="closed" value="true" />
+      <created>1705897912794</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1705897912794</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +308,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated css, added pagination buttons" />
     <MESSAGE value="able to display list of items for characters, starships, planets and vehicles. need detail views" />
     <MESSAGE value="added NotFound Page" />
     <MESSAGE value="able to click on a starship and display details" />
@@ -318,6 +332,7 @@
     <MESSAGE value="Final Commit, added README.md back in" />
     <MESSAGE value="Final commit" />
     <MESSAGE value="Final commit, added README.md back in" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final commit, added README.md back in" />
+    <MESSAGE value="updated icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated icons" />
   </component>
 </project>
